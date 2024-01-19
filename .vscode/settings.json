@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.cs": "clojure",
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "arrayutilits.h": "c"
+    }
+}
