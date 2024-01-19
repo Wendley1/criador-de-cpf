@@ -3,12 +3,7 @@
 #include <time.h>
 #include "cpf.h"
 
-void CriarCpf(){
-    printf("Digite os primeiro 9 digitos do cpf\n>");
-    char input[10];
-    scanf("%9s", input);
-
-    int* cpf = GetCpf(input);
+void PrintCpf(int* cpf){
     char* region = CpfRegion(cpf[8]);
 
     printf("CPF: ");
@@ -26,6 +21,14 @@ void CriarCpf(){
 
     free(cpf);
     free(region);
+}
+
+void CriarCpf(){
+    printf("Digite os primeiro 9 digitos do cpf\n> ");
+    char input[10];
+    scanf("%9s", input);
+
+    PrintCpf(GetCpf(input));
 }
 
 void validarCpf(){
@@ -46,24 +49,8 @@ void GenerateCpf(){
         rCpf[i] = (rand() % 10) + '0';
     }
 
-    int* cpf = GetCpf(rCpf);
-    char* region = CpfRegion(cpf[8]);
+    PrintCpf(GetCpf(rCpf));
 
-    printf("CPF: ");
-    for (int i = 0; i < 11; i++)
-    {
-        printf("%d", cpf[i]);
-        
-        if(i == 2 || i == 5)
-            printf(".");
-        if(i == 8)
-            printf("-");
-    }
-
-    printf("\nREGIAO: %s", region);
-
-    free(cpf);
-    free(region);
     free(rCpf);
 }
 
@@ -71,7 +58,7 @@ int main()
 {
     int op = 0;
 
-    printf("1 - Criar cpf; 2 - validar cpf; 3 - cpf aleatorio ; 4 - sair\n>");
+    printf("1 - Criar cpf; 2 - validar cpf; 3 - cpf aleatorio ; 4 - sair\n> ");
     scanf("%d", &op);
 
     switch (op)
