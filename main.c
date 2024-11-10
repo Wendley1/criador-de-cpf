@@ -3,26 +3,6 @@
 #include <time.h>
 #include "cpf.h"
 
-void PrintCpf(int* cpf){
-    char* region = CpfRegion(cpf[8]);
-
-    printf("CPF: ");
-    for (int i = 0; i < 11; i++)
-    {
-        printf("%d", cpf[i]);
-        
-        if(i == 2 || i == 5)
-            printf(".");
-        if(i == 8)
-            printf("-");
-    }
-
-    printf("\nREGIAO: %s", region);
-
-    free(cpf);
-    free(region);
-}
-
 void CriarCpf(){
     printf("Digite os primeiro 9 digitos do cpf\n> ");
     char input[10];
