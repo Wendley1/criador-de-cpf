@@ -4,7 +4,7 @@
 void PrintCpf(int*);
 int CpfDigit(int);
 char *CpfRegion(int);
-int* GetCpf(char[]);
+int *GetCpf(char[]);
 int CpfValid(char[]);
 
 #endif

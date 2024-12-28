@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "cpf.h"
+#include "cpf.c"
 
 void CriarCpf(){
     printf("Digite os primeiro 9 digitos do cpf\n> ");
